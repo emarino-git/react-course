@@ -1,3 +1,4 @@
+import Card from "../../Components/Card"
 import Layout from "../../Components/Layout"
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <>
       <Layout className='bg-green-200'>
         Home
+        <Card />
       </Layout>
     </>
   )
