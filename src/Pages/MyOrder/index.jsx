@@ -1,13 +1,12 @@
-
-function App() {
+function MyOrder() {
 
   return (
     <>
       <div className='bg-green-200'>
-        Hola mundo
+        My Order
       </div>
     </>
   )
 }
 
-export default App
+export default MyOrder
