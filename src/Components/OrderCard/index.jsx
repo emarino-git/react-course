@@ -2,7 +2,7 @@ import { IconCross } from "../../icons"
 
 const OrderCard = props => {
 
-  const { id, title, imageUrl, price } = props
+  const { id, title, imageUrl, price, handleDelete } = props
   return (
     <div className="flex justify-between items-center mb-2">
       <div className="flex items-center gap-2">
@@ -13,7 +13,7 @@ const OrderCard = props => {
       </div>
       <div className="flex items-center gap-3">
         <p className='text-lg font-medium'>{price}</p>
-        <IconCross className='cursor-pointer' />
+        <IconCross onClick={() => handleDelete(id)} className='cursor-pointer' />
       </div>
     </div>
   )
