@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { IconCross } from '../../icons'
 import { ShoppingCartContext } from '../../Context'
 import './styles.css'
+import OrderCard from '../OrderCard'
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext)
@@ -16,6 +17,18 @@ const CheckoutSideMenu = () => {
           onClick={context.closeCheckoutSideMenu}>
           <IconCross />
         </p>
+      </div>
+      <div className='px-6'>
+        {
+          context.cartProducts.map(product => (
+            <OrderCard 
+              key={product.id}
+              title={product.title}
+              imageUrl={product.image}
+              price={product.price}
+              />
+          ))
+        }
       </div>
     </aside>
   )
