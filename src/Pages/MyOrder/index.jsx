@@ -1,5 +1,7 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import Layout from "../../Components/Layout"
+import { IconBack } from "../../icons"
 import { ShoppingCartContext } from "../../Context"
 import OrderCard from "../../Components/OrderCard"
 
@@ -9,7 +11,12 @@ function MyOrder() {
   return (
     <>
       <Layout className='bg-green-200'>
-        My Order
+        <div >
+          <Link to='/my-orders' className="flex items-center w-80">
+            <IconBack />
+            <h1>My Order</h1>
+          </Link>
+        </div>
         <div className='flex flex-col w-80'>
           {
             context.order?.slice(-1)[0].products.map(product => (
