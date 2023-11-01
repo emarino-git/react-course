@@ -10,21 +10,21 @@ function MyOrders() {
   return (
     <>
       <Layout className='bg-green-200'>
-        <div >
-          <h1>My Orders</h1>
+        <div className="flex items-center justify-center w-80 mb-4" >
+          <h1 className="font-medium text-xl">My Orders</h1>
         </div>
         {
-          context.order.map((order, index) => {
+          context.order.map((order, index) => (
             <Link 
               key={index} 
-              to={`/my-orders/${order.id}`}
+              to={`/my-orders/${index}`}
               >
               <OrdersCard 
                 totalPrice={order.totalProducts} 
                 totalProducts={order.totalProducts} 
                 />
             </Link>
-          })
+          ))
         }
       </Layout>
     </>
